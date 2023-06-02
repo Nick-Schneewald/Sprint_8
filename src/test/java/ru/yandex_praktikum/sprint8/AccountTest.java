@@ -1,5 +1,7 @@
 package ru.yandex_praktikum.sprint8;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,7 +20,7 @@ public class AccountTest {
     @Parameterized.Parameter(1)
     public boolean expectedResult;
 
-    @Parameterized.Parameters(name = "{index} Проверка подходит ли пара имя/фамилия {0} для печати на карточке, результат {1}, ")
+    @Parameterized.Parameters(name = "{index} Checks if pair name/surname {0} can be printed on credit card, expected result {1}, ")
     public static Collection<Object[]> getData() {
         return Arrays.asList(new Object[][]{
                 {"Тимоте Шаломе",true},
@@ -40,6 +42,8 @@ public class AccountTest {
         });
     }
     @Test
+    @DisplayName("Test checks name/surname pair for to be printed on credit card")
+    @Description("Test checks name/surname pairs according to equivalence classes and border values")
     public void checkProperNameSurname(){
         account = new Account(nameSurnamePair);
         Assert.assertEquals(expectedResult, account.checkNameToEmboss());
