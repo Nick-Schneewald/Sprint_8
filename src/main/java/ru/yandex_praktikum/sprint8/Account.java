@@ -1,7 +1,5 @@
 package ru.yandex_praktikum.sprint8;
 
-import org.apache.commons.lang3.StringUtils;
-
 public class Account {
     private static final String WHITESPACE = " ";
     private static final int NOT_FOUND = -1;
@@ -14,9 +12,7 @@ public class Account {
     public boolean checkNameToEmboss() {
         if(name.length() > 2 && name.length() < 20) {
             if (countOccurrences(name.trim(),WHITESPACE.charAt(0)) == OCCURRENCES_ONCE) {
-                 if (!(name.startsWith(WHITESPACE) || name.endsWith(WHITESPACE))) {
-                    return true;
-                }
+                 if (!name.startsWith(WHITESPACE) && !name.endsWith(WHITESPACE)) return true;
             }
         }
         return false;

@@ -22,11 +22,21 @@ public class AccountTest {
     public static Collection<Object[]> getData() {
         return Arrays.asList(new Object[][]{
                 {"Тимоте Шаломе",true},
-                {"ТимотеШаломе", false},
-                {"Тимоте  Шаломе",false},
-                {"Тимоте     Шаломе", false},
-                {" ТимотеШаломе", false},
-                {"ТимотеШаломе ", false}
+                {"Арнольд Шварценейге", true},
+                {"Т ",false},
+                {"Ти Ш", true},
+                {"Арнольд Шварценейг",true},
+                {"Т", false},
+                {"", false},
+                {"Арнольд Шварценейгерррррр",false},
+                {"Арнольд Шварценейгер",false},
+                {"Арнольд Шварценейгерр",false},
+                {"Тимоте  Шаламе",false},
+                {"ТимотейШевроле",false},
+                {"Тимоте     Шаламе",false},
+                {"Тимоте   Шаламе",false},
+                {" ТимотеШаламе",false},
+                {"ТимотеШаламе ", false}
         });
     }
     @Test
